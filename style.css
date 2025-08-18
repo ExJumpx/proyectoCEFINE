@@ -1,0 +1,116 @@
+/* === Estilos generales === */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    /* Patrón diamantado */
+    background: 
+        linear-gradient(45deg, #e1dede 25%, transparent 25%) -10px 0,
+        linear-gradient(-45deg, #e1dede 25%, transparent 25%) -10px 0,
+        linear-gradient(45deg, transparent 75%, #e1dede 75%) -10px 0,
+        linear-gradient(-45deg, transparent 75%, #e1dede 75%) -10px 0;
+    background-size: 40px 40px;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* === Encabezado === */
+header {
+    background: #005f73;
+    color: white;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+/* === Navegación === */
+nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Por defecto, botones uno debajo del otro */
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* espacio entre botones */
+    margin: 20px;
+}
+
+/* === Botones === */
+button {
+    font-size: 26px;
+    padding: 15px 25px;
+    margin: 5px;
+    border: none;
+    background: #149395;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 80%;            /* que se adapten en móvil */
+    max-width: 300px;      /* no se hacen gigantes en PC */
+    transition: 0.6s;
+}
+
+button:hover {
+    background: #94d2bd;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* === Secciones de contenido === */
+section {
+    background: rgb(255, 255, 255);
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    max-width: 900px;  /* no muy ancho en PC */
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+ul {
+    list-style-type: none;   /* quita los puntos feos por defecto */
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background: #e9f5f5;     /* fondo suave para cada ítem */
+    margin: 8px 0;           /* espacio entre curiosidades */
+    padding: 12px 15px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.08);
+    font-size: 16px;
+    text-align: left;        /* texto alineado para leer mejor */
+}
+
+/* Icono decorativo en cada ítem */
+li::before {
+    content: "💡";           /* puedes cambiar a ⚛️, 🔬, 💡 */
+    margin-right: 8px;
+    color: #149395;
+}
+
+
+/* === Footer === */
+footer {
+    padding: 12px;
+    font-size: 23px;
+    background: #ffffff;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+/* === Adaptación para pantallas grandes (PC) === */
+@media (min-width: 768px) {
+    nav {
+        flex-direction: row; /* botones en fila en PC */
+    }
+
+    button {
+        width: auto; /* no forzar ancho */
+    }
+}
